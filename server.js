@@ -6,7 +6,6 @@ const app = express();
 
 /*const bodyParser = require("body-parser"); //Möjlighet att läsa in formulärdata*/ //Behövs inte nu?
 const port = process.env.PORT;
-let courseList = [];
 
 //Set view engine
 app.set('view engine', 'ejs');
@@ -36,8 +35,17 @@ client.connect((err) => {
 
 
 //Routing
-app.get("/", async(req, res) => {
-    res.render("index");
+app.get("/", async (req, res) => {
+    // Läs ut från databasen
+    client.query("SELECT * FROM courses", (err, result) => {
+        if (err) {
+            console.log("fel vid db-fråga");
+        } else {
+            res.render("index", {
+                courses: result.rows
+            });
+        }
+    });
 });
 
 app.get("/form", async(req, res) => {
@@ -45,20 +53,19 @@ app.get("/form", async(req, res) => {
 });
 
 app.post("/form", async(req, res) => {
+
         //Läs in formulärdata
-        let newCourseName = req.body.coursename;
         let newCourseCode = req.body.coursecode;
+        let newCourseName = req.body.coursename;
         let newSyllabus = req.body.syllabus;
         let newProgression = req.body.progression;
 
-        //Lägg till i array
-        courseList.push({
-            coursename: newCourseName,
-            coursecode: newCourseCode,
-            syllabus: newSyllabus,
-            progression: newProgression
-        })
-    res.render("form")
+        //SQL-frågor
+        const result = await client.query("INSERT INTO courses(coursecode, coursename, syllabus, progression) VALUES($1,$2,$3,$4)",
+        [newCourseCode, newCourseName, newSyllabus, newProgression]
+        );
+
+        res.redirect("/");
 });
 
 app.get("/about", async(req, res) => {

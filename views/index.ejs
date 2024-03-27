@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
     <title>Document</title>
 </head>
-<body>
-    
-       <!--Header/Navbar-->
-<header id="main-header">
-    <div class="container">
-        <nav>
-            <ul>
-                <li><a href="/" class="active">Startsida</a></li>
-                <li><a href="/form">Formulär</a></li>
-                <li><a href="/about">Om</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
 
+<body>
+
+    <!--Header/Navbar-->
+    <header id="main-header">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="/" class="active">Startsida</a></li>
+                    <li><a href="/form">Formulär</a></li>
+                    <li><a href="/about">Om</a></li>
+                </ul>
+            </nav>
+    </header>
+<main>
+    <div>
+        <% courses.forEach((course)=> {%>
+            <article>
+                <p><%= course.coursecode %></p>
+                <p><%= course.coursename %></p>
+                <a href="<%= course.syllabus %>">Kursplan</a>
+                <p><%= course.progression %></p>
+            </article>
+            <%}) %>
+
+    </div>
+
+</main>
 
 </body>
+
 </html>
-
-
-

@@ -22,13 +22,14 @@ client.connect((err) => {
 });
 
 //Skapa tabell
+
 client.query(`
-    CREATE TABLE courses(
+CREATE TABLE courses(
         id SERIAL PRIMARY KEY,
-        coursecode VARCHAR(5) NOT NULL,
+        coursecode VARCHAR(6) NOT NULL,
         coursename VARCHAR(100) NOT NULL,
         syllabus VARCHAR(255) NOT NULL,
-        progresson CHAR(1) NOT NULL,
+        progression CHAR(1) NOT NULL,
         created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
 `);
