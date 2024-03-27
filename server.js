@@ -1,10 +1,13 @@
 const express = require('express');
+const bodyParser = require("body-parser"); //Möjlighet att läsa in formulärdata
 const app = express();
-const port = 5000;
+const port = 3000;
+let courseList = [];
 
 //Set view engine
 app.set('view engine', 'ejs');
 app.use(express.static("public"));  //Statiska filer i "public"
+app.use(bodyParser.urlencoded({extended: true})); //Ta emot formulärdata
 
 //Routing
 app.get("/", (req, res) => {
@@ -13,6 +16,23 @@ app.get("/", (req, res) => {
 
 app.get("/form", (req, res) => {
     res.render("form");
+});
+
+app.post("/form", (req, res) => {
+        //Läs in formulärdata
+        let newCourseName = req.body.coursename;
+        let newCourseCode = req.body.coursecode;
+        let newSyllabus = req.body.syllabus;
+        let newProgression = req.body.progression;
+
+        //Lägg till i array
+        courseList.push({
+            coursename: newCourseName,
+            coursecode: newCourseCode,
+            syllabus: newSyllabus,
+            progression: newProgression
+        })
+    res.render("form")
 });
 
 app.get("/about", (req, res) => {
@@ -25,7 +45,7 @@ app.listen(port, () => {
 });
 
 
-
+/*
 //MYSQL
 const mysql = require("mysql");
 
@@ -47,7 +67,7 @@ connection.connect((err) => {
 
 connection.query(`INSERT INTO courses
 (coursecode, coursename, syllabus, progression)
-VALUES(?, ?, ?, ?);`, []; (err, results) => {
+VALUES(?, ?, ?, ?);`, [], (err, results) => {
 if (err) throw err;
 console.table(results);
-});
+});*/

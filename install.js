@@ -1,3 +1,5 @@
+
+//MYSQL
 const mysql = require("mysql");
 
 //Anslutningsinställningar
@@ -15,6 +17,7 @@ connection.connect((err) => {
     }
     console.log("connected to mysql")
 });
+
 
 //SQL-fråga
 connection.query("DROP TABLE IF EXISTS courses;", (err, results) => {
@@ -38,7 +41,7 @@ connection.query(`CREATE TABLE courses (
 
 connection.query(`INSERT INTO courses
 (coursecode, coursename, syllabus, progression)
-VALUES(?, ?, ?, ?)`, ["DT207G", "Beckendbaserad webbutveckling", "URL hittepå", "B"], (err, results) => {
+VALUES(?, ?, ?, ?);`, [], (err, results) => {
 if (err) throw err;
 console.table(results);
 });
