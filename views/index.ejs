@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/main.css">
-    <title>Document</title>
+    <title>Mina kurser - kurser</title>
 </head>
 
 <body>
@@ -22,13 +22,13 @@
             </nav>
     </header>
 <main>
-    <div>
+    <div class="courselist">
         <% courses.forEach((course)=> {%>
-            <article>
-                <p><%= course.coursecode %></p>
-                <p><%= course.coursename %></p>
-                <a href="<%= course.syllabus %>">Kursplan</a>
-                <p><%= course.progression %></p>
+            <article class="course">
+                <p class="coursecode"><%= course.coursecode %></p>
+                <p class="coursename"><%= course.coursename %></p>
+                <a class="syllabus" href="<%= course.syllabus %>">Kursplan</a>
+                <p class="progression"><%= course.progression %></p>
             </article>
             <%}) %>
 

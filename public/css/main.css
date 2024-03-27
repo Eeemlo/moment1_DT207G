@@ -1,0 +1,115 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    background-color:rgb(0, 29, 57);
+    min-height: 100vh;
+    min-width: 100vw;
+    padding: 2em 5px;
+}
+
+nav {
+position: relative;
+z-index: 10;
+width: 100%;
+}
+
+ul {
+    background-color: rgb(0, 29, 57);
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items:last baseline;
+  min-height: 4em;
+  max-width: 50em;
+  margin: 0 auto;
+}
+
+li {
+  display: inline-block;
+  width: 7em;
+  height: 2em;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li a {
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 1em 1.5em;
+}
+
+li:hover {
+    background-color: aliceblue;
+  }
+
+li:hover a{
+    color: #000000;
+  }
+
+.courselist {
+    background-color: aliceblue;
+    max-width: 50em;
+    margin: 0 auto;
+    padding: 2em 1em;
+    border-radius: 15px;
+    height: 600px;
+    overflow-y: scroll;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:rgb(112, 117, 121);
+    border-radius: 10px;
+}
+
+.course {
+    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    max-width: 45em;
+    width: 100%;
+    margin: 1em auto;
+    height: 3.5em;
+    border: 3px solid #a2a2a2;
+    border-radius: 20px;
+}
+
+.coursecode {
+    max-width: 10em;
+    width: 100%;
+    text-align: center;
+}
+
+.coursename {
+    max-width: 20em;
+    width: 100%;
+}
+
+.syllabus {
+    max-width: 10em;
+    width: 100%;
+    text-align: center;
+}
+
+.progression {
+    max-width: 5em;
+    width: 100%;
+    text-align: center;
+}
