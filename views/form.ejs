@@ -26,6 +26,9 @@
         <h2>Lägg till kurs</h2>
 
         <form method="post">
+            <% if(error != "") {%>
+                <strong><%= error %></strong>
+                <%}%>
             <label for="coursecode">Kurskod:</label>
             <input type="text" id="coursecode" name="coursecode">
             <br>

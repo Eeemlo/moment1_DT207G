@@ -163,3 +163,8 @@ input[type=submit]:hover {
     background-color: #052544;
 
 }
+
+strong {
+    color: rgb(203, 0, 0);
+    margin-bottom: 1em;
+}
