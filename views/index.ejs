@@ -30,7 +30,7 @@
                 <p class="coursename"><%= course.coursename %></p>
                 <a class="syllabus" href="<%= course.syllabus %>">Kursplan</a>
                 <p class="progression"><%= course.progression %></p>
-                <a href="/delete/<%= encodeURIComponent(course.id) %>">Radera</a>
+                <a class="delete" href="/delete/<%= encodeURIComponent(course.id) %>"><img src="/icons/delete.svg" alt="delete"></a>
             </article>
             <%}) %>
 

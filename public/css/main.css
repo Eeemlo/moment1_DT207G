@@ -12,6 +12,9 @@ body {
     min-width: 100vw;
     padding: 2em 5px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.5em;
+    letter-spacing: 0.04em;
+    overflow: hidden;
 }
 
 nav {
@@ -70,7 +73,7 @@ li:hover,
     max-width: 50em;
     margin: 0 auto;
     padding: 2em 1em;
-    height: 600px;
+    height: 80vh;
     overflow-y: scroll;
     border-top-right-radius: 5px;
     border-bottom-left-radius: 5px;
@@ -105,16 +108,15 @@ li:hover,
     max-width: 45em;
     width: 100%;
     margin: 5px auto;
-    padding: 1em 0;
+    padding: 1em 0 1em 25px;
     border: 3px solid #a2a2a2;
     border-radius: 20px;
 }
 
 
 .coursecode {
-    max-width: 10em;
+    max-width: 5em;
     width: 100%;
-    text-align: center;
 }
 
 .coursename {
@@ -125,13 +127,23 @@ li:hover,
 .syllabus {
     max-width: 10em;
     width: 100%;
-    text-align: center;
 }
 
 .progression {
     max-width: 5em;
     width: 100%;
-    text-align: center;
+
+}
+
+.delete {
+    max-width: 5em;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    max-width: 2em;
 }
 
 /*Formulär*/
@@ -168,3 +180,60 @@ strong {
     color: rgb(203, 0, 0);
     margin-bottom: 1em;
 }
+
+.om-text {
+    max-width: 600px;
+    width: 100%;
+}
+
+@media screen and (max-width: 780px) {
+    
+.coursecode {
+    max-width: 5em;
+}
+
+.coursename {
+    max-width: 30em;
+}
+
+.syllabus {
+    max-width: 5em;
+}
+
+.progression {
+    max-width:2em;
+}
+
+.delete {
+    max-width: 3em;
+}
+}
+
+@media screen and (max-width: 610px) {
+
+    .course {
+        display: grid;
+    }
+    
+    .coursecode {
+        grid-column: 1/2;
+    }
+    
+    .coursename {
+        grid-column: 1/2;
+    }
+    
+    .syllabus {
+        grid-column: 1/2;
+    }
+    
+    .progression {
+        grid-column: 1/2;
+    }
+    
+    .delete {
+        grid-row: 1/4;
+        grid-column: 3;
+        justify-self: end;
+    }
+    }
