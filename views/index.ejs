@@ -15,7 +15,7 @@
         <div class="container">
             <nav>
                 <ul>
-                    <li><a href="/" class="active">Startsida</a></li>
+                    <li  class="active"><a href="/">Startsida</a></li>
                     <li><a href="/form">Formulär</a></li>
                     <li><a href="/about">Om</a></li>
                 </ul>
@@ -23,6 +23,7 @@
     </header>
 <main>
     <div class="courselist">
+        <h2>Min kurslista</h2>
         <% courses.forEach((course)=> {%>
             <article class="course">
                 <p class="coursecode"><%= course.coursecode %></p>

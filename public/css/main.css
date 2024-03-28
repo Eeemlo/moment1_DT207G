@@ -7,10 +7,11 @@
 }
 
 body {
-    background-color:rgb(0, 29, 57);
+    background-color:#001d39;
     min-height: 100vh;
     min-width: 100vw;
     padding: 2em 5px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 nav {
@@ -23,7 +24,7 @@ ul {
     background-color: rgb(0, 29, 57);
   list-style-type: none;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: left;
   align-items:last baseline;
   min-height: 4em;
   max-width: 50em;
@@ -39,31 +40,49 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color:#707579;
+  margin-right: 1px;
 }
 
 li a {
-    color: #fff;
+    color: #ffffff;
     font-size: 1.2em;
     text-decoration: none;
     padding: 1em 1.5em;
 }
 
-li:hover {
+li:hover,
+.active {
     background-color: aliceblue;
   }
 
-li:hover a{
+  .active a {
     color: #000000;
   }
+
+  li:hover a {
+   color: #000000;
+  }
+
 
 .courselist {
     background-color: aliceblue;
     max-width: 50em;
     margin: 0 auto;
     padding: 2em 1em;
-    border-radius: 15px;
     height: 600px;
     overflow-y: scroll;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.courselist h2 {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 
@@ -75,7 +94,7 @@ li:hover a{
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color:rgb(112, 117, 121);
+    background-color:#707579;
     border-radius: 10px;
 }
 
@@ -85,11 +104,12 @@ li:hover a{
     align-items: center;
     max-width: 45em;
     width: 100%;
-    margin: 1em auto;
-    height: 3.5em;
+    margin: 5px auto;
+    padding: 1em 0;
     border: 3px solid #a2a2a2;
     border-radius: 20px;
 }
+
 
 .coursecode {
     max-width: 10em;
@@ -112,4 +132,34 @@ li:hover a{
     max-width: 5em;
     width: 100%;
     text-align: center;
+}
+
+/*Formulär*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    width: 100%;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid #a2a2a2;
+    height: 2em;
+    padding: 0 1em;
+}
+
+input[type=submit] {
+    max-width: 15em;
+    background-color: #001d39;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+
+    background-color: #052544;
+
 }

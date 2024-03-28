@@ -37,7 +37,7 @@ client.connect((err) => {
 //Routing
 app.get("/", async (req, res) => {
     // Läs ut från databasen
-    client.query("SELECT * FROM courses", (err, result) => {
+    client.query("SELECT * FROM courses ORDER BY created DESC", (err, result) => {
         if (err) {
             console.log("fel vid db-fråga");
         } else {
