@@ -20,33 +20,36 @@
                     <li><a href="/about">Om</a></li>
                 </ul>
             </nav>
+        </div>
     </header>
-<main>
-    <div class="courselist">
-        <h2>Lägg till kurs</h2>
+    <main>
+        <div class="courselist">
+            <h2>Lägg till kurs</h2>
 
-        <form method="post">
-            <% if(error != "") {%>
-                <strong><%= error %></strong>
-                <%}%>
-            <label for="coursecode">Kurskod:</label>
-            <input type="text" id="coursecode" name="coursecode">
-            <br>
-            <label for="coursename">Kursnamn:</label>
-            <input type="text" id="coursename" name="coursename">
-            <br>
-            <label for="syllabus">Kursplan:</label>
-            <input type="text" id="syllabus" name="syllabus">
-            <br>
-            <label for="progression">Progression:</label>
-            <input type="text" id="progression" name="progression">
-            <br>
-            <input type="submit" value="Lägg till ny kurs">
-        </form>
+            <form method="post">
+                <% if(error !="" ) {%>
+                    <strong>
+                        <%= error %>
+                    </strong>
+                    <%}%>
+                        <label for="coursecode">Kurskod:</label>
+                        <input type="text" id="coursecode" name="coursecode">
+                        <br>
+                        <label for="coursename">Kursnamn:</label>
+                        <input type="text" id="coursename" name="coursename">
+                        <br>
+                        <label for="syllabus">Kursplan:</label>
+                        <input type="text" id="syllabus" name="syllabus">
+                        <br>
+                        <label for="progression">Progression:</label>
+                        <input type="text" id="progression" name="progression">
+                        <br>
+                        <input type="submit" value="Lägg till ny kurs">
+            </form>
 
-    </div>
+        </div>
 
-</main>
+    </main>
 
 </body>
 

@@ -15,28 +15,36 @@
         <div class="container">
             <nav>
                 <ul>
-                    <li  class="active"><a href="/">Startsida</a></li>
+                    <li class="active"><a href="/">Startsida</a></li>
                     <li><a href="/form">Formulär</a></li>
                     <li><a href="/about">Om</a></li>
                 </ul>
             </nav>
+        </div>
     </header>
-<main>
-    <div class="courselist">
-        <h2>Min kurslista</h2>
-        <% courses.forEach((course)=> {%>
-            <article class="course">
-                <p class="coursecode"><%= course.coursecode %></p>
-                <p class="coursename"><%= course.coursename %></p>
-                <a class="syllabus" href="<%= course.syllabus %>">Kursplan</a>
-                <p class="progression"><%= course.progression %></p>
-                <a class="delete" href="/delete/<%= encodeURIComponent(course.id) %>"><img src="/icons/delete.svg" alt="delete"></a>
-            </article>
-            <%}) %>
+    <main>
+        <div class="courselist">
+            <h2>Min kurslista</h2>
+            <% courses.forEach((course)=> {%>
+                <article class="course">
+                    <p class="coursecode">
+                        <%= course.coursecode %>
+                    </p>
+                    <p class="coursename">
+                        <%= course.coursename %>
+                    </p>
+                    <a class="syllabus" href="<%= course.syllabus %>">Kursplan</a>
+                    <p class="progression">
+                        <%= course.progression %>
+                    </p>
+                    <a class="delete" href="/delete/<%= encodeURIComponent(course.id) %>"><img src="/icons/delete.svg"
+                            alt="delete"></a>
+                </article>
+                <%}) %>
 
-    </div>
+        </div>
 
-</main>
+    </main>
 
 </body>
 
